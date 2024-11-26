@@ -1,0 +1,154 @@
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Navigation Bar */
+nav {
+  background-color: rgb(29, 166, 166); /* blue background */
+  padding: 10px 20px;
+}
+
+.navbar-logo .logo-image {
+  height: 50px; /* Adjust based on the logo size */
+  border-radius: 50%;
+}
+
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Page Headings */
+h1, h2, h3 {
+  color: #328aad;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Forms */
+form {
+  max-width: 400px;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+form input, form select, form textarea, form button {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+form input:focus, form select:focus, form textarea:focus {
+  border-color: #328aad;
+  outline: none;
+}
+
+form button {
+  background-color: #328aad;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #328aad;
+}
+
+/* Pages Content */
+.container {
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 900px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Links */
+a {
+  color: #328aad;
+}
+
+a:hover {
+  color: #328aad;
+  text-decoration: underline;
+}
+
+/* Appointment Details Page */
+.appointment-details {
+  padding: 20px;
+  line-height: 1.6;
+}
+
+/* Tables (if needed for appointments or data display) */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+table th {
+  background-color: #328aad;
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table tr:hover {
+  background-color: #ddd;
+}
+
+/* Footer (optional) */
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #328aad;
+  color: white;
+  margin-top: 20px;
+}
