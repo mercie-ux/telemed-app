@@ -52,7 +52,7 @@ const PaymentPage = () => {
   };
 
   return (
-    <div style={{ padding: '20px' }}>
+    <div className='paymentContent' style={{ padding: '20px' }}>
       <h1>Payment Section</h1>
       
       {/* Insurance Details */}

@@ -12,20 +12,25 @@ const Home = () => {
     navigate('/login'); // Navigate to the login page
   };
   return(
-    <div>
-    <h1>Welcome to Afya-poa</h1>
-    <p>At Afya-poa, we are dedicated to making healthcare more accessible, efficient, and convenient. 
-        Our platform connects patients with certified healthcare providers for virtual consultations, 
-        enabling you to receive professional medical advice, diagnosis, and treatment 
-        recommendations without needing to leave your home. Through secure and user-friendly 
-        video consultations, appointment scheduling, and personalized care, Afya-poa is here to support 
-        your health wherever you are. Embrace the future of healthcare with Afya-poa — quality care, just a click away. 
-        Get medical advice, prescription, 
-        ways to maintain healthy diet and much more hustle free.
-    </p>
-    <img src={HomeImage} alt='Intro' style={{ width: '500px', height: '400px', borderRadius: '30px' }} />
-    <button onClick={handleGetStarted}>Get started</button>
-    <div style={{ display: 'flex', justifyContent: 'space-between', gap: '16px' }}>
+    <div className='homeContent'>
+        <h1>Welcome to Afya-poa</h1>
+      <div className='homeIntro'>
+        <p>At Afya-poa, we are dedicated to making healthcare more accessible, efficient, and convenient. 
+            Our platform connects patients with certified healthcare providers for virtual consultations, 
+            enabling you to receive professional medical advice, diagnosis, and treatment 
+            recommendations without needing to leave your home. Through secure and user-friendly 
+            video consultations, appointment scheduling, and personalized care, Afya-poa is here to support 
+            your health wherever you are. Embrace the future of healthcare with Afya-poa — quality care, just a click away. 
+            Get medical advice, prescription, 
+            ways to maintain healthy diet and much more hustle free. <br></br>
+            <button onClick={handleGetStarted}>Get started</button>
+        </p>
+        <img src={HomeImage} alt='Intro' style={{ width: '400px', height: '300px', borderRadius: '30px' }} />
+        
+      </div>
+    
+    
+    <div style={{ display: 'flex', gap: '4cm' }}>
     <Card 
         image={image1}
         title="Telemedicine for everyone"

@@ -11,13 +11,16 @@ body {
 nav {
   background-color: rgb(29, 166, 166); /* blue background */
   padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navbar-logo .logo-image {
-  height: 50px; /* Adjust based on the logo size */
+  height: 60px; /* Adjust based on the logo size */
   border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 
 nav ul {
   list-style-type: none;
@@ -41,12 +44,152 @@ nav ul li a {
 nav ul li a:hover {
   text-decoration: underline;
 }
+.homeIntro{
+  display: flex;
+  justify-content: center;
+  height:100vh;
+  gap: 2cm;
+}
+.homeIntro p{
+  display: block;
+  font-size: 18px;
+  padding: 20px;
+}
+.homeIntro button{
+  margin: 10px;
+  border: none;
+  background-color: aqua;
+  color: #333;
+  border-radius: 5px;
+}
+.homeIntro img{
+  margin: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+/*Providers content*/
+.providersContent p{
+  font-size: 18px;
+  padding: 20px;
+}
+/*Patient content*/
+.patientContent{
+  display: flex;
+  justify-content: center;
+  height:100vh;
+  margin: 0;
+  gap: 2cm;
+}
+.patientContent p{
+  font-size: 18px;
+  padding: 20px;
+}
+.patientContent img{
+  margin-right: 60px;
+}
+/*Appointment Content*/
+.appointmentContent p{
+  font-size: 18px;
+  padding: 20px;
+}
+/* Payment Content */
+.paymentContent {
+  max-width: 800px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.paymentContent h1,
+.paymentContent h3 {
+  text-align: center;
+  color: #333;
+}
+
+.paymentContent p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+/* Form Styles */
+select,
+input[type="text"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  display: inline-block;
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Copay Section */
+.paymentContent select {
+  display: inline-block;
+  width: auto;
+  padding: 10px;
+}
+
+.paymentContent p {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Stripe Card Element */
+.StripeElement {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #f9f9f9;
+}
+
+/* Other Payment Methods */
+.paymentContent ul {
+  list-style: none;
+  padding: 0;
+}
+
+.paymentContent ul li {
+  background: #eee;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
 
 /* Page Headings */
 h1, h2, h3 {
-  color: #328aad;
+  color: #019fde;
   text-align: center;
   margin: 20px 0;
+}
+.custom-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  gap: 0.3cm;
 }
 
 /* Forms */
@@ -96,6 +239,7 @@ form button:hover {
 .container {
   padding: 20px;
   margin: 20px auto;
+  font-family: Arial, sans-serif;
   max-width: 900px;
   background-color: white;
   border-radius: 5px;
@@ -145,10 +289,105 @@ table tr:hover {
 }
 
 /* Footer (optional) */
+.footerContent{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+footer h3{
+  color: #f2f2f2;
+}
 footer {
   text-align: center;
-  padding: 10px 0;
+  /*padding: 40px 20px;*/
   background-color: #328aad;
   color: white;
   margin-top: 20px;
+  font-family: 'Arial', sans-serif;
+  /*line-height: 1.5;*/
 }
+
+.footer-section {
+  margin-bottom: 20px;
+}
+
+.footer-section h3{
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: #61dafb;
+}
+
+.map {
+  width: 100%;
+  max-width: 200px;
+  height: 100px;
+  border: none;
+  border-radius: 10px;
+  margin: 10px auto;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-icons img{
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s;
+}
+
+.social-icons img:hover{
+  transform: scale(1.1);
+}
+
+.footer-bottom{
+  margin-top: 20px;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+  font-size: 0.9em;
+}
+
+.footer-link{
+  color: #61dafb;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-link:hover{
+  color: #f4a261;
+}
+
+/* Media Queries */
+
+/* For screens smaller than 768px (Small Tablets and Mobile Phones) */
+@media (max-width: 768px) {
+  .homeIntro {
+    gap: 1cm;
+    padding: 10px;
+  }
+  .navbar-logo .logo-image {
+    height: 40px; /* Reduce logo size further */
+  }
+  .appointmentContent, .patientContent {
+    gap: 1cm;
+  }
+  .patientContent img, .homeIntro img {
+    margin: 0;
+    max-width: 100%; /* Ensure images are responsive */
+  }
+  button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  .paymentContent {
+    padding: 15px;
+  }
+  table th, table td {
+    padding: 6px;
+  }
+}
+
+
+

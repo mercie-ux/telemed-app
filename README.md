@@ -1,5 +1,4 @@
 # telemedicine-app
-# telemedicine-app
 Project Overview
 TeleMed is a robust telemedicine platform designed to revolutionize healthcare accessibility. The application connects patients with healthcare providers through virtual consultations, empowering users to receive professional medical advice, schedule appointments, and access personalized care from the comfort of their homes.
 
@@ -51,4 +50,4 @@ Register as a healthcare provider.
 Manage consultations efficiently.
 Contact Support: For assistance, submit a query through the Contact page.
 
-Link to the pitch deck presentation https://www.canva.com/design/DAGXl11GdtE/JuUZjnrdhESZl4ON1U5I8Q/edit?utm_content=DAGXl11GdtE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+Link to the pitch deck presentation 
