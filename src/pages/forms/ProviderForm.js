@@ -10,10 +10,38 @@ const ProviderForm = () => {
     const [availability, setAvailability] = useState('');
     const [experience, setExperience] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log({ name, specialty, email });
-        // Implement provider registration API call
+
+        try {
+            const response = await fetch('http://localhost:6000/api/providers/register', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json',},
+                body: JSON.stringify({
+                    name, specialty, email, phone, address, availability, experience,
+                }),
+            });
+            if (response.ok) {
+                const data = await response.json();
+                alert(`Provider registered successfully! Provider ID: ${data.providerId}`);
+                // Reset form
+                setName('');
+                setSpecialty('');
+                setEmail('');
+                setPhone('');
+                setAddress('');
+                setAvailability('');
+                setExperience('');
+            } else {
+                const errorData = await response.json();
+                alert(`Failed to register provider: ${errorData.error}`);
+            }
+        } catch (error) {
+            console.error('Error registering provider:', error);
+            alert('An error ocurred while registering the provider');
+
+        }
+       
     };
 
     return (

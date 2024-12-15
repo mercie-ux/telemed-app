@@ -22,7 +22,7 @@ const Providers = () => {
     through convenient and accessible virtual consultations. Meet our trusted professionals 
     who are ready to address your medical concerns and empower you to lead a healthier life.
     </p>
-    <div style={{ display: 'flex', gap: '2cm' }}>
+    <div className="image-container" style={{ display: 'flex', gap: '2cm' }}>
       <Card 
         image={cardiologistImage}
         title="Dr. John Brown - Cardiologist"

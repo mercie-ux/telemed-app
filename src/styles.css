@@ -17,9 +17,13 @@ nav {
 }
 
 .navbar-logo .logo-image {
-  height: 60px; /* Adjust based on the logo size */
+  height: 100px; /* Adjust based on the logo size */
   border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.menu {
+  display: flex;
+  flex-direction: column;
 }
 
 nav ul {
@@ -37,13 +41,16 @@ nav ul li {
 nav ul li a {
   text-decoration: none;
   color: white;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
 }
 
 nav ul li a:hover {
   text-decoration: underline;
+  color: #fff;
 }
+
+
 .homeIntro{
   display: flex;
   justify-content: center;
@@ -65,6 +72,7 @@ nav ul li a:hover {
 .homeIntro img{
   margin: 40px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+ 
 }
 /*Providers content*/
 .providersContent p{
@@ -79,6 +87,7 @@ nav ul li a:hover {
   margin: 0;
   gap: 2cm;
 }
+
 .patientContent p{
   font-size: 18px;
   padding: 20px;
@@ -91,6 +100,20 @@ nav ul li a:hover {
   font-size: 18px;
   padding: 20px;
 }
+/*Image card*/
+.image-container {
+  overflow: hidden; /* Ensures the image doesnt overflow the container during animation*/
+}
+
+.image-container img{
+  
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.image-container img:hover {
+  transform: scale(1.1); /*Enlarges the image slightly*/
+}
+
 /* Payment Content */
 .paymentContent {
   max-width: 800px;
@@ -362,32 +385,395 @@ footer {
 /* Media Queries */
 
 /* For screens smaller than 768px (Small Tablets and Mobile Phones) */
-@media (max-width: 768px) {
-  .homeIntro {
-    gap: 1cm;
+@media screen and (max-width: 1200px) {
+
+  nav {
     padding: 10px;
+    display: none;
   }
+
   .navbar-logo .logo-image {
-    height: 40px; /* Reduce logo size further */
+    height: 60px;
   }
-  .appointmentContent, .patientContent {
+  .menu {
+    display: block;
+    flex-direction: column;
+    position: static;
+    background: none;
+    padding: 0;
+  }
+  
+  .menu.open {
+    display: flex;
+  }
+  
+  .toggle-button{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 4px;
+  }
+  .toggle-button .bar{
+    width: 25px;
+    height: 3px;
+    
+  }
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100vh;
+    background: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active li {
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .image-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .homeIntro, .patientContent{
+    flex-direction: column;
+    height: auto;
     gap: 1cm;
   }
-  .patientContent img, .homeIntro img {
-    margin: 0;
-    max-width: 100%; /* Ensure images are responsive */
+  .homeIntro img, .patientContent img {
+    align-items: center;
+    margin: 10px 0;
+    max-width: 90%;
   }
-  button {
-    padding: 8px 12px;
-    font-size: 14px;
-  }
-  .paymentContent {
+  .providersContent p, .appointmentContent p,
+  .homeIntro p, .patientContent p {
+    display: block;
+    font-size: 16px;
     padding: 15px;
   }
-  table th, table td {
-    padding: 6px;
+  .custom-card {
+    margin: 10px;
+    display: block;
+  }
+  .footerContent {
+    flex-direction: column;
+    text-align: center;
+  }
+  .social-icons {
+    margin: 20px 0;
+  }
+
+  .map {
+    width: 100%;
+    max-width: 300px;
   }
 }
 
+/*Media queries for mobile scree up to 768px*/
+@media screen and (max-width: 767px) {
+  body {
+    padding: 10px;
+  }
+  .navbar ul li {
+    display: flex;
+    padding: 10px;
+  }
+  .menu{
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  .menu.open {
+    display: flex; /*Show the menu when its open*/
+    pointer-events: auto;
+    transform: translateY(0);
 
+  }
+  .menu ul {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: #1DA6A6;
+  }
+  .menu ul li {
+    margin: 10px 0;
+    
+  }
+  .menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    
+  }
+  .toggle-button {
+    display: flex; /*Show the hamburger icon*/
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+  }
+  .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+  .homeIntro img .patientContent img {
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 10px;
+  }
+  h1 h2 h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .homeIntro p,
+  .patientContent p,
+  .providersContent p,
+  .appointmentContent p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 0 10px;
+  }
+  .navbar-logo .logo-image {
+    height: 80px;
+    font-size: 80px;
+    float: right;
+  }
+  .image-container {
+    flex-direction: column;
+    gap: 2cm; /*Adjust spacing between cards*/
+    align-items: center; /*center align cards*/
+    padding: 10px;
+  }
+  .image-container .card{
+    width: 100%; /*Full width for each card*/
+    max-width: 90%; /*to avoid overflowing*/
+    
+  }
+  .image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0; 
+  }
+  .image-container h2, .image-container p {
+    font-size: 1rem; 
+    text-align: center;
+    padding: 5px;
+  }
+  .patientContent {
+    flex-direction: column;
+    gap: 1cm;
+  }
+  .container, form {
+    width: 90%;
+    padding: 10px
+  }
+  table th, table td {
+    font-size: 12px;
+    padding: 10px;
+    text-align: left;
+  }
+  table {
+    font-size: 12px;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  footer {
+    padding: 20px;
+    text-align: center;
 
+  }
+  .footerContent {
+    display: block;
+    gap: 10px;
+  }
+  .social-icons img {
+    width: 25px;
+    height: 25px;
+  }
+
+}
+/* Media Queries for Small Mobile Phones*/
+@media screen and (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  h1, h2, h3 {
+    font-size: 1.5em;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+  }
+  button {
+    padding: 8px;
+    font-size: 14px;
+  }
+  .navbar-logo .logo-image {
+    margin-bottom: 1rem;
+    height: 40px;
+  }
+  
+  .image-container{
+    flex-direction: column;
+    align-items: center;
+    overflow-x: auto;
+    gap: 1rem;
+  }
+  .image-container::-webkit-scrollbar {
+    height: 6px;
+  }
+  .image-container::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+  }
+
+  .image-container::-webkit-scrollbar-thumb:hover {
+    background: #999;
+  }
+  .homeIntro p,
+  .patientContent p,
+  .providersContent p,
+  .appointmentContent p {
+    display: block;
+    font-size: 14px;
+    padding: 10px;
+  }
+  form {
+    padding: 15px;
+  }
+  .custom-card {
+    padding: 15px;
+  }
+  .footer-section h3{
+    font-size: 1.2em;
+  }
+  .map {
+    max-width: 100px;
+  }
+}
+@media screen and (max-width: 300px) {
+  body {
+    padding: 5px;
+  }
+  .navbar {
+    display: flex;
+    align-items: center;
+    gap: 3cm;
+  }
+  .navbar ul li {
+    padding: 8px;
+  }
+  .menu {
+    width: 100%;
+    padding: 5px;
+  }
+  .menu ul li a {
+    font-size: 14px;
+  }
+  .toggle-button {
+    width: 25px;
+    height: 20px;
+    
+  }
+  .bar {
+    height: 2px;
+    width: 100%;
+    background-color: #333;
+  }
+  .homeIntro img, .patientContent img {
+    width: 95%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 8px;
+  }
+
+  h1, h2, h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  .homeIntro p, .patientContent p, 
+  .providersContent p, .appointmentContent p {
+    font-size: 16px;
+    margin: 0 8px;
+  }
+  .navbar-logo .logo-image {
+    height: 50px;
+    float: none;
+    margin: 0 auto;
+    display: block;
+  }
+  .image-container {
+    gap: 1.5cm;
+    padding: 5px;
+  }
+  .image-container .card {
+    max-width: 95%;
+    margin: 5px auto;
+  }
+  .image-container img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  .image-container h2, .image-container p {
+    font-size: 0.9rem;
+    padding: 4px;
+  }
+  .patientContent {
+    gap: 0.8cm;
+  }
+  .container, form{
+    width: 95%;
+    padding: 5px;
+  }
+  
+  table th, table td{
+    font-size: 10px;
+    padding: 5px;
+  }
+  table{
+    font-size: 10px;
+  }
+  footer {
+    padding: 10px;
+    font-size: 12px;
+  }
+  .footerContent {
+    gap: 5px;
+  }
+  .social-icons img {
+    width: 20px;
+    height: 20px;
+  }
+}

@@ -7,14 +7,34 @@ const RegisterForm = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (password !== confirmPassword) {
             alert('Passwords do not match!');
             return;
         }
-        console.log({ email, password });
-        // Implement registration API call
+        
+        try {
+            const response = await fetch('http://localhost:6000/api/auth/register', {
+                method: 'POST',
+                headers: {'Content-Type' : 'application/json'},
+                body: JSON.stringify({ email, password}),
+            });
+            
+            if (response.ok) {
+                alert('Registration successful!');
+                // reset
+                setEmail('');
+                setPassword('');
+                setConfirmPassword('');
+            } else {
+                const errorData = await response.json();
+                alert(`Error: ${errorData.errors?.[0]?.msg || errorData.error}`);    
+            }
+        } catch (error) {
+            console.error('Error during registration:', error);
+            alert('An error occurred. Please try again.');
+        }
     };
 
     return (
@@ -23,7 +43,7 @@ const RegisterForm = () => {
             <label>Email:</label>
             <input 
                 type="email"
-                value="{email}"
+                value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
             />

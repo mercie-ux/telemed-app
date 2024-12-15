@@ -15,6 +15,7 @@ const Home = () => {
     <div className='homeContent'>
         <h1>Welcome to Afya-poa</h1>
       <div className='homeIntro'>
+      <img src={HomeImage} alt='Intro' style={{ width: '400px', height: '300px', borderRadius: '30px' }} />
         <p>At Afya-poa, we are dedicated to making healthcare more accessible, efficient, and convenient. 
             Our platform connects patients with certified healthcare providers for virtual consultations, 
             enabling you to receive professional medical advice, diagnosis, and treatment 
@@ -25,12 +26,12 @@ const Home = () => {
             ways to maintain healthy diet and much more hustle free. <br></br>
             <button onClick={handleGetStarted}>Get started</button>
         </p>
-        <img src={HomeImage} alt='Intro' style={{ width: '400px', height: '300px', borderRadius: '30px' }} />
+        
         
       </div>
     
     
-    <div style={{ display: 'flex', gap: '4cm' }}>
+    <div  className="image-container"  style={{ display: 'flex', gap: '4cm'}}>
     <Card 
         image={image1}
         title="Telemedicine for everyone"

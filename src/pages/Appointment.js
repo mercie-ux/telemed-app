@@ -8,13 +8,13 @@ import photo4 from '../assets/bookapp2.jpg';
 import photo5 from '../assets/bookapp3.jpg';
 import photo6 from '../assets/bookapp4.jpg';
 import BookAppointmentForm from './forms/BookAppointmentForm';
-
 const Appointment = () => {
   const navigate = useNavigate(); // Initialize navigate function
 
   const handleScheduleClick = () => {
     navigate('/schedule'); // Navigate to the schedule form
   };
+  
   return (
     <div className='appointmentContent'>
       <div>
@@ -25,7 +25,7 @@ const Appointment = () => {
           After booking, your scheduled appointments will appear under View Booked Appointments for quick access to details,
           including the date, time, and type of consultation.
         </p>
-        <div style={{ display: 'flex', gap: '4cm' }}>
+        <div className="image-container" style={{ display: 'flex', gap: '4cm' }}>
         <Card 
           image={photo1}
           description='Booking an online appointment with a 
@@ -54,7 +54,7 @@ const Appointment = () => {
     
     <BookAppointmentForm />
       </div>
-      <div style={{ display: 'flex', gap: '4cm' }}>
+      <div className="image-container" style={{ display: 'flex', gap: '4cm' }}>
       <Card 
           image={photo4}
           description='Log in or sign up to connect with certified 
