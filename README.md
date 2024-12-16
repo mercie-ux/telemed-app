@@ -33,21 +33,5 @@ JavaScript: For implementing interactive features.
 Project Structure
 The TeleMed app comprises the following sections:
 
-Home Page: Overview of the platform and its features.
-Appointments Page:
-Book an appointment.
-View booked appointments.
-Providers Page: Meet healthcare providers with details about their specialties.
-Login & Registration Pages: Secure user access for patients and providers.
-Contact Page: Submit queries and feedback.
-Payment Page: Seamless payment processing.
-How to Use the App
-Patient Registration:
-Create an account and log in.
-Book appointments and explore healthcare services.
-Provider Registration:
-Register as a healthcare provider.
-Manage consultations efficiently.
-Contact Support: For assistance, submit a query through the Contact page.
-
 Link to the pitch deck presentation 
+https://www.canva.com/design/DAGXl11GdtE/JuUZjnrdhESZl4ON1U5I8Q/edit?utm_content=DAGXl11GdtE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
