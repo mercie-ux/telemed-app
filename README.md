@@ -30,8 +30,7 @@ Node.js & MySQL: For server-side operations and database management.
 REST API: For communication between frontend and backend.
 Additional Tools:
 JavaScript: For implementing interactive features.
-Project Structure
-The TeleMed app comprises the following sections:
+ preview of the website https://www.canva.com/design/DAGXl11GdtE/JuUZjnrdhESZl4ON1U5I8Q/edit?utm_content=DAGXl11GdtE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
 Link to the pitch deck presentation 
 https://www.canva.com/design/DAGXl11GdtE/JuUZjnrdhESZl4ON1U5I8Q/edit?utm_content=DAGXl11GdtE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
